@@ -7,7 +7,7 @@
     <custom-rich-text content="{{readmeContent}}" />
     <view class="title">演示</view>
     <custom-virtuali-list
-      virtualiList="{{goodsInfo.data}}"
+      virtualiList2d="{{goodsInfo.data}}"
       generic:selectable="my-goods"
       external-list-wrapper="goods-list"
     />

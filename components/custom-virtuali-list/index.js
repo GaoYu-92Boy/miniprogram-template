@@ -1,5 +1,3 @@
-import lodash from '~/utils/lodash';
-
 // components/custom-virtuali-list/index.js
 Component({
   externalClasses: ['external-list-wrapper'],
@@ -8,29 +6,16 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    virtualiList: {
+    // 二维数组，一维数组的长度最好是ui展示区域的1.5倍以上
+    virtualiList2d: {
       type: Array,
       value: [],
-    },
-    // 页面dom渲染数量，最好渲染出来的高度是可视区域的2倍以上
-    pageDomCount: {
-      type: Number,
-      value: 20,
     },
   },
 
   observers: {
-    virtualiList() {
-      const { virtualiList, pageDomCount } = this.data;
-      const virtualiList2d = lodash.chunk(virtualiList, pageDomCount);
-      this.setData(
-        {
-          virtualiList2d,
-        },
-        () => {
-          this.getVirtualiListHeight();
-        }
-      );
+    virtualiList2d() {
+      this.getVirtualiListHeight();
     },
   },
 

@@ -1,6 +1,7 @@
 import '~/utils/lodash.fix';
-import { chunk } from '~/utils/lodash.mini';
+import { chunk, flattenDeep } from '~/utils/lodash.mini';
 
 export default {
   chunk,
+  flattenDeep,
 };

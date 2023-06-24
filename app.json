@@ -48,7 +48,7 @@
     {
       "root": "packageB",
       "name": "packageB",
-      "pages": ["pages/watermark/index", "pages/swiper-guide-animation/index"]
+      "pages": ["pages/swiper-guide-animation/index"]
     }
   ]
 }

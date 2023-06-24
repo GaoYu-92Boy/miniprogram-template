@@ -80,7 +80,7 @@ Page({
     // 延迟 500ms mock 请求
     setTimeout(() => {
       this.setData({
-        'goodsInfo.data': data.concat(list),
+        [`goodsInfo.data[${data.length}]`]: list,
         'goodsInfo.nomore': !list.length,
         'goodsInfo.lowerLoading': false,
       });
@@ -139,7 +139,7 @@ Page({
     this.setData(
       {
         readmeContent,
-        'goodsInfo.data': list,
+        'goodsInfo.data': [list],
         'goodsInfo.empty': !list.length,
         'goodsInfo.nomore': !list.length,
       },
