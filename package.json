@@ -29,17 +29,17 @@
     "miniprogram-ci": "node miniprogram-ci.js"
   },
   "dependencies": {
-    "@vant/weapp": "^1.10.4",
-    "dayjs": "^1.11.5"
+    "@vant/weapp": "^1.10.23",
+    "dayjs": "^1.11.9"
   },
   "devDependencies": {
-    "eslint": "^8.23.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "miniprogram-ci": "^1.8.35",
-    "prettier": "^2.7.1",
     "cross-env": "^7.0.3",
-    "npm-run-all": "^4.1.5"
+    "eslint": "^8.47.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "miniprogram-ci": "^1.9.8",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8"
   },
   "husky": {
     "hooks": {

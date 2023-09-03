@@ -10,6 +10,7 @@
       virtualiList2d="{{goodsInfo.data}}"
       generic:selectable="my-goods"
       external-list-wrapper="goods-list"
+      wxKey="spuId"
     />
     <custom-nomore wx:if="{{goodsInfo.nomore}}" />
     <custom-more wx:if="{{goodsInfo.lowerLoading}}" />

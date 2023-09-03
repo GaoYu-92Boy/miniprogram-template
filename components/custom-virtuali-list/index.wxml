@@ -9,7 +9,7 @@
     id="virtuali-list"
   >
     <view wx:if="{{wxsModule.includesList(virtualValue, otherIndex)}}" class="list-wrapper external-list-wrapper">
-      <selectable wx:for="{{otherItem}}" wx:key="index" virtualiItem="{{item}}" />
+      <selectable wx:for="{{otherItem}}" wx:key="wxKey" virtualiItem="{{item}}" />
     </view>
     <view wx:else style="height: {{virtualHeight[otherIndex]}}px;" />
   </view>

@@ -11,6 +11,9 @@ Component({
       type: Array,
       value: [],
     },
+    wxKey: {
+      optionalTypes: ['string', 'number'],
+    },
   },
 
   observers: {
