@@ -1,12 +1,27 @@
 // components/custom-image/index.js
+const { log } = getApp();
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
+    width: {
+      optionalTypes: [String, Number],
+      value: '100%',
+    },
+    height: {
+      optionalTypes: [String, Number],
+      value: '100%',
+    },
     src: {
       type: String,
-      value: '',
+      observer: function () {
+        this.setData({
+          error: false,
+          loading: true,
+        });
+      },
     },
     mode: {
       type: String,
@@ -16,23 +31,22 @@ Component({
       type: Boolean,
       value: true,
     },
-    width: {
-      optionalTypes: [String, Number],
-      value: '100%',
+    lazyLoad: {
+      type: Boolean,
+      value: true,
     },
-    height: {
-      optionalTypes: [String, Number],
-      value: '100%',
+    round: {
+      type: Boolean,
+      value: false,
     },
-    radius: {
-      optionalTypes: [String, Number],
-      value: 0,
+    flex: {
+      type: Boolean,
+      value: false,
     },
-    round: Boolean,
-    lazyLoad: Boolean,
-    useErrorSlot: Boolean,
-    useLoadingSlot: Boolean,
-    showMenuByLongpress: Boolean,
+    showMenuByLongpress: {
+      type: Boolean,
+      value: false,
+    },
     showError: {
       type: Boolean,
       value: true,
@@ -41,18 +55,21 @@ Component({
       type: Boolean,
       value: true,
     },
+    placeholder: {
+      type: Boolean,
+      value: true,
+    },
     customStyle: {
       type: String,
       value: '',
     },
-  },
-
-  observers: {
-    src() {
-      this.setData({
-        error: false,
-        loading: true,
-      });
+    radius: {
+      optionalTypes: [String, Number],
+      value: 0,
+    },
+    showLoadingBackg: {
+      type: String,
+      value: '#edf0f0',
     },
   },
 
@@ -68,22 +85,25 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onLoad(e) {
-      this.setData({
-        loading: false,
-      });
-      this.triggerEvent('load', e);
-    },
-    onError(e) {
+    /**
+     * @method error 当错误发生时触发，event.detail = {errMsg}
+     */
+    error(e) {
+      const { errMsg } = e.detail;
       this.setData({
         loading: false,
         error: true,
       });
-      this.triggerEvent('error', e);
-      console.error('========================👇 custom-image加载错误 👇========================\n\n', e, '\n\n');
+      log &&
+        console.error('========================👇 custom-image加载错误 👇========================\n\n', errMsg, '\n\n');
     },
-    onClick(e) {
-      this.triggerEvent('click', e);
+    /**
+     * @method load 当图片载入完毕时触发，event.detail = {height, width}
+     */
+    load() {
+      this.setData({
+        loading: false,
+      });
     },
   },
 });

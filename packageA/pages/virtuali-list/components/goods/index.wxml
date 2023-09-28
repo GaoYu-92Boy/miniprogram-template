@@ -1,5 +1,5 @@
 <!--packageA/pages/virtuali-list/components/goods/index.wxml-->
-<view class="custom-goods" style="width: 320rpx">
+<view wx:if="{{virtualiItem}}" class="custom-goods" style="width: 320rpx">
   <custom-image src="{{virtualiItem.miniCoverImage}}" width="320rpx" height="480rpx">
     <view wx:if="{{virtualiItem.willSellOut || virtualiItem.stockNum}}" class="characteristic">
       <view wx:if="{{virtualiItem.stockNum}}" class="sell-out">已售罄</view>

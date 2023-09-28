@@ -1,30 +1,44 @@
 <!--components/custom-image/index.wxml-->
-<wxs src="/utils/wxs.wxs" module="computed" />
-
 <view
-  bindtap="onClick"
-  style="width: {{computed.addRpxUnit(width)}}; height: {{computed.addRpxUnit(height)}}; border-radius: {{radius ? computed.addRpxUnit(radius) : 0}}; {{customStyle}}"
-  class="custom-image {{round ? 'custom-image--round' : ''}}"
+  style="width: {{wxsModule.addUnit(width)}}; height: {{wxsModule.addUnit(height)}}; border-radius: {{radius ? wxsModule.addUnit(radius) : 0}}; {{customStyle}}"
+  class="image-wrapper {{round ? 'image-round' : ''}} {{flex ? 'flex' : ''}}"
 >
   <image
-    wx:if="{{ !error }}"
-    src="{{ src }}"
-    mode="{{ mode }}"
+    src="{{src}}"
+    mode="{{mode}}"
     webp="{{webp}}"
-    lazy-load="{{ lazyLoad }}"
-    class="image-class custom-image__img"
-    show-menu-by-longpress="{{ showMenuByLongpress }}"
-    bind:load="onLoad"
-    bind:error="onError"
+    lazy-load="{{lazyLoad}}"
+    show-menu-by-longpress="{{showMenuByLongpress}}"
+    binderror="error"
+    bindload="load"
+    class="image-img"
   />
-
-  <view wx:if="{{ loading && showLoading }}" class="loading-class custom-image__loading">
-    <slot wx:if="{{ useLoadingSlot }}" name="loading" />
-    <view wx:else class="custom-image__loading-icon" />
+  <slot />
+  <view
+    wx:if="{{ loading && showLoading }}"
+    style="background-color: {{showLoadingBackg}};"
+    class="image-loading {{round ? 'image-round' : ''}}"
+  >
+    <image
+      wx:if="{{placeholder}}"
+      mode="widthFix"
+      src="/assets/images/common/fabrique_logo.png"
+      lazy-load="{{lazyLoad}}"
+      class="placeholder_bg_logo"
+    />
   </view>
-
-  <view wx:if="{{ error && showError }}" class="error-class custom-image__error">
-    <slot wx:if="{{ useErrorSlot }}" name="error" />
-    <view wx:else class="custom-image__error-icon" />
-  </view>
+  <view wx:if="{{ error && showError }}" class="image-error {{round ? 'image-round' : ''}}" />
 </view>
+
+<!-- prettier-ignore -->
+<wxs module="wxsModule">
+  var REGEXP = getRegExp('^-?\d+(\.\d+)?$');
+  module.exports = {
+    addUnit: function (value) {
+      if (value == null) {
+        return undefined;
+      }
+      return REGEXP.test('' + value) ? value + 'px' : value;
+    }
+  }
+</wxs>
