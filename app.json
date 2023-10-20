@@ -10,24 +10,7 @@
   "resolveAlias": {
     "~/*": "/*"
   },
-  "usingComponents": {
-    "van-nav-bar": "@vant/weapp/nav-bar/index",
-    "van-toast": "@vant/weapp/toast/index",
-    "van-button": "@vant/weapp/button/index",
-    "van-checkbox": "@vant/weapp/checkbox/index",
-    "van-field": "@vant/weapp/field/index",
-    "van-loading": "@vant/weapp/loading/index",
-    "custom-nav-bar": "/components/custom-nav-bar/index",
-    "custom-broken-network": "/components/custom-broken-network/index",
-    "custom-image": "/components/custom-image/index",
-    "custom-iconfont": "/components/custom-iconfont/index",
-    "custom-rich-text": "/components/custom-rich-text/index",
-    "custom-loading": "/components/custom-loading/index",
-    "custom-video": "/components/custom-video/index",
-    "custom-virtuali-list": "/components/custom-virtuali-list/index",
-    "custom-more": "/components/custom-more/index",
-    "custom-nomore": "/components/custom-nomore/index"
-  },
+  "usingComponents": {},
   "sitemapLocation": "sitemap.json",
   "pages": ["pages/home/index"],
   "subPackages": [

@@ -1,3 +1,12 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-loading": "/components/custom-loading/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-field": "@vant/weapp/field/index",
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "custom-broken-network": "/components/custom-broken-network/index",
+    "custom-image": "/components/custom-image/index",
+    "custom-rich-text": "/components/custom-rich-text/index"
+  }
 }

@@ -9,7 +9,7 @@
     id="virtuali-list"
   >
     <view wx:if="{{wxsModule.includesList(virtualValue, otherIndex)}}" class="list-wrapper external-list-wrapper">
-      <selectable wx:for="{{otherItem}}" wx:key="wxKey" virtualiItem="{{item}}" />
+      <selectable wx:for="{{otherItem}}" wx:key="_index" virtualiItem="{{item}}" />
     </view>
     <view wx:else style="height: {{virtualHeight[otherIndex]}}px;" />
   </view>
@@ -17,13 +17,13 @@
 
 <!-- prettier-ignore -->
 <wxs module="wxsModule">
-	module.exports = {
-		includesList: function (virtualValue, virtualIndex) {
-			if (virtualValue.length) {
-				return virtualValue.indexOf(virtualIndex) !== -1
-			} else {
-				return true
-			}
-		}
-	}
+  module.exports = {
+    includesList: function (virtualValue, virtualIndex) {
+      if (virtualValue.length) {
+        return virtualValue.indexOf(virtualIndex) !== -1
+      } else {
+        return true
+      }
+    }
+  }
 </wxs>

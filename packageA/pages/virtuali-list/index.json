@@ -1,5 +1,13 @@
 {
   "usingComponents": {
-    "my-goods": "./components/goods/index"
+    "custom-virtuali-list": "/components/custom-virtuali-list/index",
+    "custom-more": "/components/custom-more/index",
+    "custom-nomore": "/components/custom-nomore/index",
+    "custom-loading": "/components/custom-loading/index",
+    "my-goods": "./components/goods/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "custom-broken-network": "/components/custom-broken-network/index",
+    "custom-rich-text": "/components/custom-rich-text/index"
   }
 }

@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-video": "/components/custom-video/index",
+    "custom-loading": "/components/custom-loading/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "custom-broken-network": "/components/custom-broken-network/index",
+    "custom-rich-text": "/components/custom-rich-text/index"
+  }
 }

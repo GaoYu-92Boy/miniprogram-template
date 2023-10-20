@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "custom-nav-bar": "/components/custom-nav-bar/index",
+    "custom-iconfont": "/components/custom-iconfont/index"
+  }
 }

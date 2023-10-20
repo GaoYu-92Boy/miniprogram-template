@@ -8,12 +8,6 @@ const { systemInfo } = getApp();
 
 Page({
   /**
-   * 页面的私有数据，不涉及到页面渲染的数据
-   */
-  _data: {
-    _refreshInfo: null, // 刷新详情
-  },
-  /**
    * 页面的初始数据
    */
   data: {
@@ -302,11 +296,6 @@ Page({
         const response = await getCustomVideo();
         resolve(response);
       } catch (error) {
-        // 正常加载
-        this._data._refreshInfo = {
-          method: 'initData',
-          params: {},
-        };
         this.setData(
           {
             brokenNetwork: true,
@@ -336,12 +325,11 @@ Page({
    */
   async refresh() {
     await checkNetwork();
-    const { _refreshInfo } = this._data;
-    // 刷新详情，方法和参数
-    const { method, params } = _refreshInfo;
+
+    this.initData();
+
     this.setData({
       brokenNetwork: false,
     });
-    this[method](params);
   },
 });

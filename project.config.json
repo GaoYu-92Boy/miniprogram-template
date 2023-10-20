@@ -41,7 +41,7 @@
 		"useCompilerPlugins": [
 			"sass"
 		],
-		"condition": false
+		"condition": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.19.4",

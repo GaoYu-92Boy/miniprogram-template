@@ -20,7 +20,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    containerStyle: {}, // 设置容器的样式
+    containerStyle: '', // 设置容器的样式
     tagStyle: {}, // 设置标签的默认样式
     copyLink: true, // 是否允许外部链接被点击时自动复制
     domain: '', // 主域名（用于链接拼接）

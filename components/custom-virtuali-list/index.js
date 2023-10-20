@@ -11,9 +11,6 @@ Component({
       type: Array,
       value: [],
     },
-    wxKey: {
-      optionalTypes: ['string', 'number'],
-    },
   },
 
   observers: {
@@ -26,7 +23,6 @@ Component({
    * 组件的初始数据
    */
   data: {
-    virtualiList2d: [], //  虚拟列表数组二维数组
     virtualHeight: [], // 虚拟列表高度数组
     virtualValue: [-1, 0, 1], // 虚拟列表展示数组
     _virtualListObserve: null, // IntersectionObserver 对象
