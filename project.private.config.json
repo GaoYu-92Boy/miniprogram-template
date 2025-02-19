@@ -10,6 +10,13 @@
 		"miniprogram": {
 			"list": [
 				{
+					"name": "pages/test/index",
+					"pathName": "pages/test/index",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
 					"name": "",
 					"pathName": "pages/home/index",
 					"query": "",

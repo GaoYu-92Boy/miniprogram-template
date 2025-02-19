@@ -12,7 +12,7 @@
   },
   "usingComponents": {},
   "sitemapLocation": "sitemap.json",
-  "pages": ["pages/home/index"],
+  "pages": ["pages/home/index", "pages/test/index"],
   "subPackages": [
     {
       "root": "packageA",
