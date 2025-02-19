@@ -6,7 +6,21 @@ import { reLaunch } from './utils/util';
 App({
   onLaunch() {
     log && console.log(`========================👇 ${env}环境 👇========================\n\n`, env, '\n\n');
-
+    if (!wx.cloud) {
+      log &&
+        console.error(
+          '========================👇 请使用 2.2.3 或以上的基础库以使用云能力 👇========================\n\n'
+        );
+    } else {
+      wx.cloud.init({
+        // env 参数说明：
+        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
+        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
+        //   如不填则使用默认环境（第一个创建的环境）
+        env: 'test',
+        traceUser: true,
+      });
+    }
     // 获取全局唯一的版本更新管理器，用于管理小程序更新
     const updateManager = wx.getUpdateManager();
     // 监听小程序有版本更新事件。客户端主动触发下载（无需开发者触发），下载成功后回调

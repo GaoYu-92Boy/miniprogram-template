@@ -20,7 +20,7 @@
     "build:test02": "cross-env NODE_ENV=test02 run-s switch-env miniprogram-ci",
     "build:pre": "cross-env NODE_ENV=preview run-s switch-env miniprogram-ci",
     "build:prod": "cross-env NODE_ENV=production run-s switch-env miniprogram-ci",
-    "prepare": "husky install && npx husky add .husky/pre-commit 'npx lint-staged'",
+    "prepare": "husky install",
     "prettier": "prettier --write",
     "prettier-lint": "prettier --write .",
     "eslint": "eslint --ext .ts,.js",

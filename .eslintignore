@@ -1,6 +1,6 @@
 node_modules/
 miniprogram_npm/
-
+cloudfunctions/quickstartFunctions
 # 业务代码
 components/mp-weixin
 utils/lodash.mini.js

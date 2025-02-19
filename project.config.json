@@ -1,4 +1,5 @@
 {
+	"cloudfunctionRoot": "cloudfunctions/",
 	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": [],
@@ -45,11 +46,12 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.19.4",
-	"appid": "wx0d6d764af9843ae7",
+	"appid": "wxf6ed855f5215b54d",
 	"projectname": "miniprogram-92",
 	"condition": {},
 	"editorSetting": {
 		"tabIndent": "tab",
 		"tabSize": 2
-	}
+	},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }
